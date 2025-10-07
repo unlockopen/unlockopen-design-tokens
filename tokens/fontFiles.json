@@ -15,6 +15,13 @@
         "file": "unlockopen-design-tokens/assets/fonts/geologica/Geologica[CRSV,SHRP,slnt,wght].woff2",
         "weightRange": "200 900"
       }
+    },
+    "robotomono": {
+      "family": "Roboto Mono",
+      "source": "unlockopen-design-tokens/assets/fonts/robotomono",
+      "weights": {
+        "400": "unlockopen-design-tokens/assets/fonts/robotomono/robotomono-regular.woff2"
+      }
     }
   }
 }
