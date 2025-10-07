@@ -12,7 +12,7 @@ import {
   LAVENDER, LAVENDER_LIGHT
 } from './colors.js';
 
-export const themes = {
+const themes = {
   pink: {
     textColor: DARK,
     accentColor: PINK,
@@ -70,6 +70,6 @@ export const defaultTheme = themes.golden;
 export default {
   title: "Themes",
   description: "Color theme definitions using core brand colors",
-  themes,
-  defaultTheme
+  ...themes,
+  defaultTheme,
 };
