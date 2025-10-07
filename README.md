@@ -42,7 +42,7 @@ const tailwindColors = tokensToTailwind(colors.items)
 
 ```js
 // tailwind.config.js
-import { colors, spacing, fonts, textSizes, clampGenerator, tokensToTailwind } from '@unlockopen/design-tokens'
+import { colors, spacing, fonts, textSizes, clampGenerator, tokensToTailwind } from 'unlockopen-design-tokens'
 
 export default {
   theme: {
@@ -57,9 +57,6 @@ export default {
 ### CSS Custom Properties
 
 ```css
-/* Import font faces */
-@import url('node_modules/@unlockopen/design-tokens/assets/fonts/geologica/font-face.css');
-
 /* Use individual theme */
 [data-theme="golden"] {
   --color-text: #161717;
