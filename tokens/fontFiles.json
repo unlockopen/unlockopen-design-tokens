@@ -4,15 +4,15 @@
   "fonts": {
     "geologica": {
       "family": "Geologica",
-      "source": "geologica",
+      "source": "unlockopen-design-tokens/assets/fonts/geologica",
       "weights": {
-        "300": "geologica/fonts/webfonts/woff2/Geologica-Light.woff2",
-        "500": "geologica/fonts/webfonts/woff2/Geologica-Medium.woff2",
-        "600": "geologica/fonts/webfonts/woff2/Geologica-SemiBold.woff2",
-        "700": "geologica/fonts/webfonts/woff2/Geologica-Bold.woff2"
+        "300": "unlockopen-design-tokens/assets/fonts/geologica/geologica-light.woff2",
+        "500": "unlockopen-design-tokens/assets/fonts/geologica/geologica-medium.woff2",
+        "600": "unlockopen-design-tokens/assets/fonts/geologica/geologica-semibold.woff2",
+        "700": "unlockopen-design-tokens/assets/fonts/geologica/geologica-bold.woff2"
       },
       "variable": {
-        "file": "geologica/fonts/variable/Geologica[CRSV,SHRP,slnt,wght].woff2",
+        "file": "unlockopen-design-tokens/assets/fonts/geologica/Geologica[CRSV,SHRP,slnt,wght].woff2",
         "weightRange": "200 900"
       }
     }
