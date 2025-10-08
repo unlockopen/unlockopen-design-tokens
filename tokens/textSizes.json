@@ -6,6 +6,11 @@
   },
   "items": [
     {
+      "name": "Step min 2",
+      "min": 11,
+      "max": 12
+    },
+    {
       "name": "Step min 1",
       "min": 13,
       "max": 15
@@ -31,9 +36,29 @@
       "max": 37
     },
     {
+      "name": "Step 4",
+      "min": 33,
+      "max": 46
+    },
+    {
+      "name": "Step 5",
+      "min": 40,
+      "max": 58
+    },
+    {
       "name": "Step 6",
       "min": 48,
       "max": 72
+    },
+    {
+      "name": "Step 7",
+      "min": 57,
+      "max": 91
+    },
+    {
+      "name": "Step 8",
+      "min": 69,
+      "max": 113
     },
     {
       "name": "Step 9",
