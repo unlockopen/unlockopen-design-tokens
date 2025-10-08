@@ -3,6 +3,7 @@ export { default as colors } from './tokens/colors.js';
 export { default as themes } from './tokens/themes.js';
 export { default as fonts } from './tokens/fonts.json' with { type: 'json' };
 export { default as fontFiles } from './tokens/fontFiles.json' with { type: 'json' };
+export { default as logoFiles } from './tokens/logoFiles.json' with { type: 'json' };
 export { default as spacing } from './tokens/spacing.json' with { type: 'json' };
 export { default as textSizes } from './tokens/textSizes.json' with { type: 'json' };
 export { default as textLeading } from './tokens/textLeading.json' with { type: 'json' };

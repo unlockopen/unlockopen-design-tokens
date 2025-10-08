@@ -1,0 +1,21 @@
+{
+  "title": "Logo Files",
+  "description": "Maps logo types to actual logo file paths in dependencies",
+  "logos": {
+    "main": {
+      "name": "Logo",
+      "description": "Main UnlockOpen logo for use in headers, documents, and presentations",
+      "file": "unlockopen-design-tokens/assets/logos/logo.svg"
+    },
+    "text": {
+      "name": "Logo Text",
+      "description": "UnlockOpen logo with text for branding and marketing materials",
+      "file": "unlockopen-design-tokens/assets/logos/logo-text.svg"
+    },
+    "favicon": {
+      "name": "Favicon",
+      "description": "UnlockOpen logo optimized for favicon use with design token colors",
+      "file": "unlockopen-design-tokens/assets/logos/favicon.svg"
+    }
+  }
+}

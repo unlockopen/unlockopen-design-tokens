@@ -17,6 +17,9 @@
     "index.js",
     "README.md"
   ],
+  "scripts": {
+    "build": "node utilities/generate-logo-variants.js"
+  },
   "keywords": [
     "design-tokens",
     "design-system",
