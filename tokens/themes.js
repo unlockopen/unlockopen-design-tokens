@@ -65,11 +65,19 @@ const themes = {
   }
 };
 
+const items = Object.keys(themes).map(name => {
+  return {
+    name,
+    ...themes[name]
+  }
+});
+
 export const defaultTheme = themes.golden;
 
 export default {
   title: "Themes",
   description: "Color theme definitions using core brand colors",
   ...themes,
+  items,
   defaultTheme,
 };
