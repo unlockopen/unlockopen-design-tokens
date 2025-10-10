@@ -1,6 +1,6 @@
 // Raw design tokens
-export * from './tokens/colors.js';
-export * from './tokens/themes.js';
+export * as colors from './tokens/colors.js';
+export * as themes from './tokens/themes.js';
 export { default as fonts } from './tokens/fonts.json' with { type: 'json' };
 export { default as fontFiles } from './tokens/fontFiles.json' with { type: 'json' };
 export { default as logoFiles } from './tokens/logoFiles.json' with { type: 'json' };
