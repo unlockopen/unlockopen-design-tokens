@@ -74,7 +74,7 @@ const items = Object.keys(themes).map(name => {
 
 export const defaultTheme = themes.aqua;
 
-export default {
+export {
   title: "Themes",
   description: "Color theme definitions using core brand colors",
   ...themes,

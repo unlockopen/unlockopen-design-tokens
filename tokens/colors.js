@@ -56,8 +56,5 @@ export const items = [
   { name: "Lavender Light", value: LAVENDER_LIGHT }
 ];
 
-export default {
-  title: "Colors",
-  description: "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
-  items
-};
+export const title = "Colors";
+export const description = "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.";
