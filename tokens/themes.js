@@ -72,7 +72,7 @@ const items = Object.keys(themes).map(name => {
   }
 });
 
-export const defaultTheme = themes.golden;
+export const defaultTheme = themes.aqua;
 
 export default {
   title: "Themes",
