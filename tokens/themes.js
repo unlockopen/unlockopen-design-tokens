@@ -74,10 +74,10 @@ const items = Object.keys(themes).map(name => {
 
 export const defaultTheme = themes.aqua;
 
-export {
+export default {
   title: "Themes",
   description: "Color theme definitions using core brand colors",
   ...themes,
   items,
-  defaultTheme,
+  defaultTheme
 };
