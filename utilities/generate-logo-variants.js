@@ -3,23 +3,53 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import themes from '../tokens/themes.js';
+import sharp from 'sharp';
+import { items } from '../tokens/themes.js';
 import logoFiles from '../tokens/logoFiles.json' with { type: 'json' };
 import { GREY_LIGHT } from '../tokens/colors.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const assetsDir = path.join(__dirname, '../assets/logos');
 const outputDir = path.join(assetsDir, 'variants');
+const pngOutputDir = path.join(assetsDir, 'png');
 
-// Ensure variants directory exists
+// Ensure directories exist
 fs.mkdirSync(outputDir, { recursive: true });
+fs.mkdirSync(pngOutputDir, { recursive: true });
+
+// Function to convert SVG to PNG using sharp
+async function convertToPng(svgPath, pngPath) {
+  try {
+    await sharp(svgPath)
+      .png()
+      .resize(512, 512, {
+        fit: 'contain',
+        background: { r: 0, g: 0, b: 0, alpha: 0 }
+      })
+      .toFile(pngPath);
+  } catch (error) {
+    console.error(`Failed to convert ${svgPath} to PNG:`, error.message);
+  }
+}
 
 const baseLogos = Object.values(logoFiles.logos).map(logo => path.basename(logo.file));
 const generatedFiles = [];
 
-console.log('🎨 Generating logo variants for all themes...\n');
+async function generateLogos() {
+console.log('🎨 Generating logo variants and PNG versions for all themes...\n');
 
-for (const theme of themes.items) {
+// First, generate PNG versions of base logos
+console.log('📸 Generating PNG versions of base logos...');
+for (const logoFile of baseLogos) {
+  const svgPath = path.join(assetsDir, logoFile);
+  const pngPath = path.join(pngOutputDir, `${path.basename(logoFile, '.svg')}.png`);
+  await convertToPng(svgPath, pngPath);
+  console.log(`  ✓ ${logoFile} → ${path.basename(pngPath)}`);
+}
+
+console.log('\n🎨 Generating themed variants...');
+
+for (const theme of items) {
 
   console.log(`📁 ${theme.name}: ${theme.textColor}, ${theme.accentColor}`);
 
@@ -51,7 +81,12 @@ for (const theme of themes.items) {
     }
 
     const variantFilename = `${path.basename(logoFile, '.svg')}-${theme.name}.svg`;
-    fs.writeFileSync(path.join(outputDir, variantFilename), processedSvg);
+    const variantPath = path.join(outputDir, variantFilename);
+    fs.writeFileSync(variantPath, processedSvg);
+
+    // Also generate PNG version of the variant
+    const pngVariantPath = path.join(pngOutputDir, `${path.basename(logoFile, '.svg')}-${theme.name}.png`);
+    await convertToPng(variantPath, pngVariantPath);
 
     generatedFiles.push({
       theme: theme.name,
@@ -64,4 +99,8 @@ for (const theme of themes.items) {
 
 // Variants are generated at build time and don't need to be tracked in logoFiles.json
 
-console.log(`\n🎉 Generated ${generatedFiles.length} logo variants`);
+console.log(`\n🎉 Generated ${generatedFiles.length} logo variants and PNG versions`);
+}
+
+// Run the generator
+generateLogos().catch(console.error);
